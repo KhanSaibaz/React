@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class='btns' onclick='indrement()'>0 </button>
+</body>
+
+<script>
+const indrement=()=>{
+const btns = document.querySelector('.btns')
+const newValue = Number(btns.innerHTML) + 1
+btns.innerText=newValue
+}
+
+    </script>
+</html>
