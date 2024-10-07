@@ -1,14 +1,31 @@
 import React from 'react'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import Home from './components/Home/Home'
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import {Layout,Home, About, Contact, User, Githubs, GithibInfo } from './components/dependency/index';  
+
+
 
 function App() {
+  const router =createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<Layout/>}>
+        <Route path='' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='user/:userid' element={ <User/> }/>
+        <Route path='/github' element={ <Githubs/> }
+          loader={GithibInfo}
+        />
+        
+      </Route>,
+  
+     
+    )
+  )
+  
   return (
    <>
-    <Header></Header>
-    <Home></Home>
-    <Footer></Footer>
+  <RouterProvider router={router}/>
+   
    </>
   )
 }

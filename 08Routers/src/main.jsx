@@ -1,14 +1,10 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
 import App from './App.jsx'
-import './index.css'
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import Layout from './layout.jsx'
-import Home from './components/Home/Home.jsx'
-import About from './components/About/About.jsx'
-import Contact from './components/Contact/Contact.jsx'
-import User from './components/User/User.jsx'
-import Githubs, {GithibInfo} from './components/Githubs/Githubs.jsx'
+// import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+// import {Layout,Home, About, Contact, User, Githubs, GithibInfo } from './components/dependency/index';  
+
 
 
 // const router =createBrowserRouter([
@@ -32,26 +28,27 @@ import Githubs, {GithibInfo} from './components/Githubs/Githubs.jsx'
 //   }
 // ])
 
-const router =createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Layout/>}>
-      <Route path='' element={<Home/>}/>
-      <Route path='/about' element={<About/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-      <Route path='user/:userid' element={ <User/> }/>
-      <Route path='/github' element={ <Githubs/> }
-        loader={GithibInfo}
-      />
+// const router =createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route path='/' element={<Layout/>}>
+//       <Route path='' element={<Home/>}/>
+//       <Route path='/about' element={<About/>}/>
+//       <Route path='/contact' element={<Contact/>}/>
+//       <Route path='user/:userid' element={ <User/> }/>
+//       <Route path='/github' element={ <Githubs/> }
+//         loader={GithibInfo}
+//       />
       
-    </Route>,
+//     </Route>,
 
    
-  )
-)
+//   )
+// )
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <RouterProvider router={router}/>
+  <App/>
+  {/* <RouterProvider router={router}/> */}
   </StrictMode>,
 
 )
